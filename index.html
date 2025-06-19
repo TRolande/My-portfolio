@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and title for responsive design and SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumugane Rolande - Resume</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for the hero image and responsive adjustments */
+        .hero-img-wrapper {
+            flex: 0 0 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 12px;
+            border: 4px solid #2a5298;
+            box-shadow: 0 8px 32px rgba(30,60,114,0.18);
+            background: #fff;
+        }
+        @media (max-width: 700px) {
+            .hero-img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-slider">
+        <!-- Slide 1: Hero/About -->
+        <div class="cv-slide active" id="slide-1">
+            <div class="hero-flex">
+                <div class="hero-img-wrapper">
+                    <!-- Profile image -->
+                    <img src="profile.jpeg" alt="Tumugane Rolande" class="hero-img">
+                </div>
+                <div class="hero-content">
+                    <h1>Hi, I'm <span class="highlight">Tumugane Rolande</span></h1>
+                    <h2 class="animated-text typewrite" data-period="2000" data-type='[ "Empowering Women in STEM.", "Software Engineering Student.", "Building for the Future." ]'></h2>
+                    <p>Passionate about technology, innovation, and creating opportunities for women in STEM.<br>Software Engineering @ ALU.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2: Story -->
+        <div class="cv-slide" id="slide-2">
+            <h2>My Story</h2>
+            <p>
+                <!-- Personal story and motivation -->
+                Growing up, I noticed that girls were often underrepresented in science and technology classes.
+                This inspired me to become a voice for change. My journey in tech began with curiosity and a desire to break barriers.
+                Today, as a Software Engineering student at ALU, I am dedicated to empowering women to pursue their dreams in STEM.
+                Through community work, mentorship, and building innovative solutions, I strive to create opportunities for girls and women to shine in technology.
+                I believe that when women are empowered, the world becomes a better, more innovative place for everyone.
+            </p>
+        </div>
+        <!-- Slide 3: Languages -->
+        <div class="cv-slide" id="slide-3">
+            <h2>Languages</h2>
+            <ul class="languages-list">
+                <!-- List of languages spoken -->
+                <li><strong>English</strong> – Fluent</li>
+                <li><strong>French</strong> – Fluent</li>
+                <li><strong>Kiswahili</strong> – Conversational</li>
+                <li><strong>Kinyarwanda</strong> – Native</li>
+            </ul>
+        </div>
+        <!-- Slide 4: Education -->
+        <div class="cv-slide" id="slide-4">
+            <h2>Education</h2>
+            <ul>
+                <!-- University education -->
+                <li>
+                    <strong>African Leadership University (ALU)</strong><br>
+                    BSc. Software Engineering, 2024 - Now<br>
+                    Currently pursuing a Bachelor of Science in Software Engineering, focusing on building strong technical and problem-solving skills through hands-on projects, collaborative learning, and real-world application of software development principles.
+                </li>
+                <!-- Advanced Level -->
+                <li>
+                    <strong>Groupe Scolaire Notre Dame du Saint Rosaire</strong><br>
+                    Advanced Level Certificate, 2020 - 2023<br>
+                    Studied Mathematics, Computer Science, and Economics. Developed analytical and computational skills, and earned the A-Level certificate.
+                </li>
+                <!-- Ordinary Level -->
+                <li>
+                    <strong>Groupe Scolaire Mater Dei Nyanza</strong><br>
+                    Ordinary Level (S1–S3)<br>
+                    Completed lower secondary education with a strong foundation in sciences and general studies.
+                </li>
+                <!-- Primary School -->
+                <li>
+                    <strong>École Primaire Saint André Gitarama</strong><br>
+                    Primary Education<br>
+                    Completed primary studies, building essential academic and social skills.
+                </li>
+            </ul>
+        </div>
+        <!-- Slide 5: Skills -->
+        <div class="cv-slide" id="slide-5">
+            <h2>Skills</h2>
+            <div class="skills-flex">
+                <!-- Technical Skills on the left -->
+                <div class="skills-column">
+                    <h3>Technical Skills</h3>
+                    <ol class="skills-list-numbered">
+                        <li>Programming</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>REST APIs</li>
+                        <li>SQL & Databases</li>
+                        <li>Git & GitHub</li>
+                        <li>UI/UX Design</li>
+                        <li>Agile & Scrum</li>
+                    </ol>
+                </div>
+                <!-- Other Skills on the right -->
+                <div class="skills-column">
+                    <h3>Other Skills</h3>
+                    <ol class="skills-list-numbered" start="15">
+                        <li>Problem Solving</li>
+                        <li>Team Collaboration</li>
+                        <li>Critical Thinking</li>
+                        <li>Open Source Contribution</li>
+                        <li>Communication</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 6: Certificates -->
+        <div class="cv-slide" id="slide-6">
+            <h2>Certificates</h2>
+            <ul>
+                <!-- List of certificates and achievements -->
+                <li>
+                    <strong>Wavumbuzi Entrepreneurship Challenge Edition 1</strong><br>
+                    Awarded for participation and achievement, 2020.
+                </li>
+                <li>
+                    <strong>Wavumbuzi Entrepreneurship Challenge Edition 2</strong><br>
+                    Awarded for participation and achievement, 2021.
+                </li>
+                <li>
+                    <strong>BNR Quiz Challenge</strong><br>
+                    Certificate of participation, 2021.
+                </li>
+                <li>
+                    <strong>DataCamp: Introduction to SQL</strong><br>
+                    Statement of Accomplishment for completing Introduction to SQL.
+                </li>
+                <li>
+                    <strong>DataCamp: Introduction to Python</strong><br>
+                    Statement of Accomplishment for completing Introduction to Python.
+                </li>
+            </ul>
+        </div>
+        <!-- Slide 7: Experience -->
+        <div class="cv-slide" id="slide-7">
+            <h2>Experience</h2>
+            <ul>
+                <!-- Professional and extracurricular experience -->
+                <li>
+                    <strong>Global AI Summit Africa</strong><br>
+                    Participated in the Global AI Summit, Kigali, 2024. Engaged with AI leaders and contributed to discussions on ethical AI and women in tech.
+                </li>
+                <li>
+                    <strong>Shenovate Member</strong><br>
+                    Active member of Shenovate, empowering women in tech through mentorship and collaborative projects.
+                </li>
+                <li>
+                    <strong>ALU Coding Club</strong><br>
+                    Organized and led coding workshops for fellow students, focusing on web development and Python programming.
+                </li>
+                <li>
+                    <strong>Open Source Contributor</strong><br>
+                    Contributed to open source projects on GitHub, collaborating with global developers and improving real-world applications.
+                </li>
+            </ul>
+        </div>
+        <!-- Slide 8: Projects -->
+        <div class="cv-slide" id="slide-8">
+            <h2>Projects</h2>
+            <ul class="project-list">
+                <li>
+                    <strong>MamaCare</strong>: A pregnancy tracker app that supports and empowers mothers with reminders, health tips, and a caring community.<br>
+                    <em>Find it on GitHub:</em> <a href="https://github.com/TRolande/mamacare" target="_blank" rel="noopener">TRolande/mamacare</a>
+                </li>
+                <li>
+                    <strong>Movie App</strong>: A web app for searching movies, viewing details, and managing a personal watchlist.<br>
+                    <em>Find it on GitHub:</em> <a href="https://github.com/TRolande/movie-app" target="_blank" rel="noopener">TRolande/movie-app</a>
+                </li>
+                <li>
+                    <strong>Grade Generator Calculator</strong>: An interactive tool that calculates student grades and provides instant feedback.<br>
+                    <em>Find it on GitHub:</em> <a href="https://github.com/TRolande/grade-generator" target="_blank" rel="noopener">TRolande/grade-generator</a>
+                </li>
+                <li>
+                    <strong>Submission Reminder App</strong>: Reminds students when assignment deadlines are reached, helping them submit work on time.<br>
+                    <em>Find it on GitHub:</em> <a href="https://github.com/TRolande/submission-reminder" target="_blank" rel="noopener">TRolande/submission-reminder</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Slide 9: Reach Me Out -->
+        <div class="cv-slide" id="slide-9">
+            <h2>Reach Me Out</h2>
+            <div class="contact-links">
+                <p>
+                    <strong>Email:</strong>
+                    <a href="mailto:rolandetumugane@gmail.com">rolandetumugane@gmail.com</a>
+                </p>
+                <p>
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/TRolande" target="_blank" rel="noopener">TRolande</a>
+                </p>
+                <p>
+                    <strong>LinkedIn:</strong>
+                    <a href="https://linkedin.com/in/rolande-tumugane" target="_blank" rel="noopener">Rolande Tumugane</a>
+                </p>
+            </div>
+        </div>
+        <!-- Slide 10: Leave a Comment -->
+        <div class="cv-slide" id="slide-10">
+            <h2>Leave a Comment</h2>
+            <form class="feedback-form" action="#" method="post" autocomplete="off">
+                <div class="form-group">
+                    <label for="viewer-name">Name:</label>
+                    <input type="text" id="viewer-name" name="viewer-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="viewer-email">Email:</label>
+                    <input type="email" id="viewer-email" name="viewer-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="viewer-feedback">Feedback:</label>
+                    <textarea id="viewer-feedback" name="viewer-feedback" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+        <button class="nav-arrow left-arrow" id="prevSlide">&#8592;</button>
+        <button class="nav-arrow right-arrow" id="nextSlide">&#8594;</button>
+    </div>
+    <div class="slider-progress">
+        <div class="slider-bar" id="sliderBar"></div>
+    </div>
+    <footer style="text-align:center; color:#888; padding:1em 0 0.5em 0; font-size:1em;">
+        &copy; 2025 Tumugane Rolande. All rights reserved.
+    </footer>
+    <script src="main.js"></script>
+    <script>
+const slides = document.querySelectorAll('.cv-slide');
+const progressBar = document.getElementById('sliderBar');
+const prevBtn = document.getElementById('prevSlide');
+const nextBtn = document.getElementById('nextSlide');
+let current = 0;
+const SLIDE_TIME = 3500;
+let autoSlide;
+
+function showSlide(idx) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === idx);
+    });
+    if (progressBar) {
+        progressBar.style.width = ((idx + 1) / slides.length * 100) + '%';
+    }
+    current = idx;
+}
+function nextSlide() {
+    showSlide((current + 1) % slides.length);
+}
+function prevSlide() {
+    showSlide((current - 1 + slides.length) % slides.length);
+}
+function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, SLIDE_TIME);
+}
+function stopAutoSlide() {
+    clearInterval(autoSlide);
+}
+if (nextBtn && prevBtn) {
+    nextBtn.onclick = () => { nextSlide(); stopAutoSlide(); startAutoSlide(); };
+    prevBtn.onclick = () => { prevSlide(); stopAutoSlide(); startAutoSlide(); };
+}
+let startX = 0;
+document.querySelector('.cv-slider').addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+});
+document.querySelector('.cv-slider').addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+    if (endX - startX > 50) { prevSlide(); stopAutoSlide(); startAutoSlide(); }
+    else if (startX - endX > 50) { nextSlide(); stopAutoSlide(); startAutoSlide(); }
+});
+showSlide(0);
+startAutoSlide();
+    </script>
+</body>
+</html>
