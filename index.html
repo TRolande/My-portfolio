@@ -1,0 +1,454 @@
+ 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumugane Rolande - Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="profile.jpeg">
+    <meta name="description" content="Tumugane Rolande's professional portfolio. Software Engineer, Women in STEM Advocate, and Open Source Contributor.">
+    <meta name="keywords" content="Tumugane Rolande, Software Engineer, Portfolio, Women in STEM, Web Developer, ALU">
+    <meta property="og:title" content="Tumugane Rolande - Software Engineer Portfolio">
+    <meta property="og:description" content="Portfolio of Tumugane Rolande, passionate about technology and empowering women in STEM.">
+    <meta property="og:image" content="profile.jpeg">
+    <meta property="og:type" content="website">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #1e3c72 0%, #2a5298 60%, #f5f7fa 100%);
+            color: #222;
+            margin: 0;
+            padding-bottom: 80px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .main-navbar {
+            background: #2a5298;
+            padding: 0.7em 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(30,60,114,0.10);
+        }
+        .main-navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 1.5em;
+        }
+        .main-navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            padding: 0.3em 1em;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.3s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .main-navbar a::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: #ffd600;
+            transition: all 0.3s cubic-bezier(.4,2,.6,1);
+            border-radius: 2px;
+        }
+        .main-navbar a.active-nav::after,
+        .main-navbar a:hover::after {
+            left: 20%;
+            width: 60%;
+        }
+        .main-navbar a:hover,
+        .main-navbar a:focus {
+            background: #0097a7;
+            color: #ffd600;
+            box-shadow: 0 4px 16px rgba(0,151,167,0.15);
+            transform: scale(1.07);
+        }
+        .main-navbar a.active-nav {
+            background: #ffd600;
+            color: #1e3c72;
+            box-shadow: 0 2px 12px #ffd60055;
+        }
+        .portfolio-section {
+            max-width: 900px;
+            margin: 3em auto 2em auto;
+            padding: 2em 1.5em;
+            background: #f5f7fa;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(30,60,114,0.07);
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            pointer-events: none;
+            transition: opacity 0.7s cubic-bezier(.4,2,.6,1), transform 0.7s cubic-bezier(.4,2,.6,1), box-shadow 0.5s;
+        }
+        .portfolio-section.active-section {
+            opacity: 1;
+            transform: translateY(0) scale(1.01);
+            pointer-events: auto;
+            z-index: 1;
+            box-shadow: 0 8px 32px 0 #ffd60055, 0 2px 12px rgba(30,60,114,0.07);
+            animation: glow 1.2s ease;
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 0 #ffd60000, 0 2px 12px rgba(30,60,114,0.07); }
+            60% { box-shadow: 0 0 32px #ffd60088, 0 2px 12px rgba(30,60,114,0.07); }
+            100% { box-shadow: 0 8px 32px 0 #ffd60055, 0 2px 12px rgba(30,60,114,0.07); }
+        }
+        h1, h2, h3 {
+            color: #1e3c72;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .hero-img-wrapper {
+            flex: 0 0 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 12px;
+            border: 4px solid #2a5298;
+            box-shadow: 0 8px 32px rgba(30,60,114,0.18);
+            background: #fff;
+        }
+        @media (max-width: 700px) {
+            .hero-img {
+                width: 120px;
+                height: 120px;
+            }
+            .main-navbar ul {
+                flex-direction: column;
+                gap: 0.5em;
+            }
+            .portfolio-section {
+                padding: 1em 0.5em;
+            }
+        }
+        .skills-flex {
+            display: flex;
+            gap: 3em;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 2em;
+        }
+        .skills-column {
+            flex: 1 1 250px;
+            min-width: 220px;
+        }
+        .skills-list-numbered {
+            margin: 1em 0 0 1.5em;
+            padding: 0;
+            max-width: 320px;
+        }
+        .skills-list-numbered li {
+            margin-bottom: 1em;
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #1e3c72;
+            background: #fff;
+            border-left: 5px solid #0097a7;
+            border-radius: 8px;
+            padding: 0.5em 1em;
+            box-shadow: 0 1px 6px rgba(30,60,114,0.06);
+        }
+        .feedback-form {
+            max-width: 420px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 2em 1.5em 1.5em 1.5em;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(30,60,114,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2em;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4em;
+        }
+        .feedback-form label {
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 0.2em;
+        }
+        .feedback-form input,
+        .feedback-form textarea {
+            border: 1.5px solid #0097a7;
+            border-radius: 6px;
+            padding: 0.7em;
+            font-size: 1em;
+            font-family: inherit;
+            background: #f5f7fa;
+            color: #222;
+            transition: border 0.2s;
+        }
+        .feedback-form input:focus,
+        .feedback-form textarea:focus {
+            border-color: #ffd600;
+            outline: none;
+            background: #fff;
+        }
+        .feedback-form button {
+            background: linear-gradient(90deg, #0097a7 0%, #ffd600 100%);
+            color: #1e3c72;
+            border: none;
+            border-radius: 6px;
+            padding: 0.7em 1.5em;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        .feedback-form button:hover {
+            background: linear-gradient(90deg, #ffd600 0%, #0097a7 100%);
+            color: #fff;
+        }
+        .hidden-section {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Navbar -->
+    <nav class="main-navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="portfolio-section active-section">
+        <div style="display:flex;gap:2em;align-items:center;flex-wrap:wrap;">
+            <div class="hero-img-wrapper">
+                <img src="profile.jpeg" alt="Tumugane Rolande" class="hero-img">
+            </div>
+            <div>
+                <h1>Hi, I'm <span style="color:#0097a7;">Tumugane Rolande</span></h1>
+                <p>
+                    Passionate about technology, innovation, and creating opportunities for women in STEM.<br>
+                    Software Engineering @ ALU.
+                </p>
+                <p>
+                    Growing up, I noticed that girls were often underrepresented in science and technology classes.
+                    This inspired me to become a voice for change. My journey in tech began with curiosity and a desire to break barriers.
+                    Today, as a Software Engineering student at ALU, I am dedicated to empowering women to pursue their dreams in STEM.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="portfolio-section hidden-section">
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <strong>African Leadership University (ALU)</strong><br>
+                BSc. Software Engineering, 2024 - Now<br>
+                Currently pursuing a Bachelor of Science in Software Engineering, focusing on building strong technical and problem-solving skills through hands-on projects, collaborative learning, and real-world application of software development principles.
+            </li>
+            <li>
+                <strong>Groupe Scolaire Notre Dame du Saint Rosaire</strong><br>
+                Advanced Level Certificate, 2020 - 2023<br>
+                Studied Mathematics, Computer Science, and Economics. Developed analytical and computational skills, and earned the A-Level certificate.
+            </li>
+            <li>
+                <strong>Groupe Scolaire Mater Dei Nyanza</strong><br>
+                Ordinary Level (S1–S3)<br>
+                Completed lower secondary education with a strong foundation in sciences and general studies.
+            </li>
+            <li>
+                <strong>École Primaire Saint André Gitarama</strong><br>
+                Primary Education<br>
+                Completed primary studies, building essential academic and social skills.
+            </li>
+        </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="portfolio-section hidden-section">
+        <h2>Skills</h2>
+        <div class="skills-flex">
+            <div class="skills-column">
+                <h3>Technical Skills</h3>
+                <ol class="skills-list-numbered">
+                    <li>Programming</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React.js</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>REST APIs</li>
+                    <li>SQL & Databases</li>
+                    <li>Git & GitHub</li>
+                    <li>UI/UX Design</li>
+                    <li>Agile & Scrum</li>
+                </ol>
+            </div>
+            <div class="skills-column">
+                <h3>Other Skills</h3>
+                <ol class="skills-list-numbered" start="15">
+                    <li>Problem Solving</li>
+                    <li>Team Collaboration</li>
+                    <li>Critical Thinking</li>
+                    <li>Open Source Contribution</li>
+                    <li>Communication</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="portfolio-section hidden-section">
+        <h2>Experience</h2>
+        <ul>
+            <li>
+                <strong>Global AI Summit Africa</strong><br>
+                Participated in the Global AI Summit, Kigali, 2024. Engaged with AI leaders and contributed to discussions on ethical AI and women in tech.
+            </li>
+            <li>
+                <strong>Shenovate Member</strong><br>
+                Active member of Shenovate, empowering women in tech through mentorship and collaborative projects.
+            </li>
+            <li>
+                <strong>ALU Coding Club</strong><br>
+                Organized and led coding workshops for fellow students, focusing on web development and Python programming.
+            </li>
+            <li>
+                <strong>Open Source Contributor</strong><br>
+                Contributed to open source projects on GitHub, collaborating with global developers and improving real-world applications.
+            </li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="portfolio-section hidden-section">
+        <h2>Projects</h2>
+        <div class="project-slider-list">
+            <div class="project-card active-project">
+                <strong>MamaCare</strong>: A pregnancy tracker app that supports and empowers mothers with reminders, health tips, and a caring community.<br>
+                <em>Find it on GitHub:</em> <a href="https://github.com/TRolande/mamacare" target="_blank" rel="noopener">TRolande/mamacare</a>
+            </div>
+            <div class="project-card">
+                <strong>Movie App</strong>: A web app for searching movies, viewing details, and managing a personal watchlist.<br>
+                <em>Find it on GitHub:</em> <a href="https://github.com/TRolande/movie-app" target="_blank" rel="noopener">TRolande/movie-app</a>
+            </div>
+            <div class="project-card">
+                <strong>Grade Generator Calculator</strong>: An interactive tool that calculates student grades and provides instant feedback.<br>
+                <em>Find it on GitHub:</em> <a href="https://github.com/TRolande/grade-generator" target="_blank" rel="noopener">TRolande/grade-generator</a>
+            </div>
+            <div class="project-card">
+                <strong>Submission Reminder App</strong>: Reminds students when assignment deadlines are reached, helping them submit work on time.<br>
+                <em>Find it on GitHub:</em> <a href="https://github.com/TRolande/submission-reminder" target="_blank" rel="noopener">TRolande/submission-reminder</a>
+            </div>
+        </div>
+        <button class="slider-arrow left-arrow">&lt;</button>
+        <button class="slider-arrow right-arrow">&gt;</button>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="portfolio-section hidden-section">
+        <h2>Certificates</h2>
+        <ul>
+            <li>
+                <strong>Wavumbuzi Entrepreneurship Challenge Edition 1</strong><br>
+                Awarded for participation and achievement, 2020.
+            </li>
+            <li>
+                <strong>Wavumbuzi Entrepreneurship Challenge Edition 2</strong><br>
+                Awarded for participation and achievement, 2021.
+            </li>
+            <li>
+                <strong>BNR Quiz Challenge</strong><br>
+                Certificate of participation, 2021.
+            </li>
+            <li>
+                <strong>DataCamp: Introduction to SQL</strong><br>
+                Statement of Accomplishment for completing Introduction to SQL.
+            </li>
+            <li>
+                <strong>DataCamp: Introduction to Python</strong><br>
+                Statement of Accomplishment for completing Introduction to Python.
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="portfolio-section hidden-section">
+        <h2>Reach Me Out</h2>
+        <div>
+            <p>
+                <strong>Email:</strong>
+                <a href="mailto:rolandetumugane@gmail.com">rolandetumugane@gmail.com</a>
+            </p>
+            <p>
+                <strong>GitHub:</strong>
+                <a href="https://github.com/TRolande" target="_blank" rel="noopener">TRolande</a>
+            </p>
+            <p>
+                <strong>LinkedIn:</strong>
+                <a href="https://linkedin.com/in/rolande-tumugane" target="_blank" rel="noopener">Rolande Tumugane</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="portfolio-section hidden-section">
+        <h2>Leave a Comment</h2>
+        <p style="text-align:center; color:#1e3c72; margin-bottom:1.5em;">
+            I value your feedback! Please fill out the form below and your message will be sent directly to me.
+        </p>
+        <form class="feedback-form" action="https://formspree.io/f/yourformid" method="POST" autocomplete="off">
+            <div class="form-group">
+                <label for="viewer-name">Name</label>
+                <input type="text" id="viewer-name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="viewer-email">Email</label>
+                <input type="email" id="viewer-email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label for="viewer-feedback">Feedback</label>
+                <textarea id="viewer-feedback" name="message" rows="4" required placeholder="Your feedback..."></textarea>
+            </div>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
+    <footer style="text-align:center; color:#888; padding:1em 0 0.5em 0; font-size:1em;">
+        <p>© 2025 Tumugane Rolande. All rights reserved.</p>
+        <p>
+            <a href="mailto:rolandetumugane@gmail.com">Email</a> |
+            <a href="https://github.com/TRolande" target="_blank">GitHub</a> |
+            <a href="https://linkedin.com/in/rolande-tumugane" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+
+    <!-- Enhanced JavaScript -->
+    <script src="portfolio.js"></script>
+</body>
+</html>
