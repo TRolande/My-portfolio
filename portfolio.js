@@ -21,10 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     hamburger.addEventListener('click', function() {
         navbar.classList.toggle('nav-open');
         hamburger.classList.toggle('is-active');
-        // Add body scroll lock for mobile
-        document.body.classList.toggle('nav-open');
-    });
-    
+         // Instead of toggling a class, explicitly toggle overflow-x on body
+    if (navbar.classList.contains('nav-open')) {
+        document.body.style.overflowX = 'hidden';  // Prevent horizontal scroll
+    } else {
+        document.body.style.overflowX = '';        // Restore default
+    }
+});
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (!nav.contains(e.target) && navbar.classList.contains('nav-open')) {
